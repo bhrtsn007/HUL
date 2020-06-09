@@ -4,11 +4,11 @@ all_auditrec () {
     echo "<br>"
     if [ "$1" -eq "1" ]; then
       echo '<pre>'
-       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript auditrec search_by "[[{'status', 'notequal', 'audit_completed'},{'status','notequal','audit_resolved'},{'status','notequal','audit_cancelled'},{'status','notequal','audit_reaudited'}], 'key']."
+       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript auditrec search_by "[[{'status', 'notequal', 'audit_completed'},{'status', 'notequal', 'audit_resolved'},{'status', 'notequal', 'audit_cancelled'},{'status', 'notequal', 'audit_aborted'},{'status', 'notequal', 'audit_reaudited'},{'status', 'notequal', 'audit_complete'}], ['audit_id','status','updated_time']]."
        echo '</pre>'
     elif [ "$1" -eq "2" ]; then
       echo '<pre>'
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript auditrec search_by "[[{'status', 'notequal', 'audit_completed'},{'status','notequal','audit_resolved'},{'status','notequal','audit_cancelled'},{'status','notequal','audit_reaudited'}], 'record']."
+        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript auditrec search_by "[[{'status', 'notequal', 'audit_completed'},{'status', 'notequal', 'audit_resolved'},{'status', 'notequal', 'audit_cancelled'},{'status', 'notequal', 'audit_aborted'},{'status', 'notequal', 'audit_reaudited'},{'status', 'notequal', 'audit_complete'}], 'record']."
         echo '</pre>'
     else
         echo "Wrong key pressed"
@@ -20,7 +20,7 @@ echo ""
 echo '<html>'
 echo '<head>'
 echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
-echo '<title>All audit Task for status rack_picked in system</title>'
+echo '<title>Tareas de auditoría en estado Rack Picked</title>'
 echo '</head>'
 echo '<body style="background-color:#B8B8B8">'
 
