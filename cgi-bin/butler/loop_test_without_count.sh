@@ -9,7 +9,7 @@ Unlimited_loop_test () {
     else
         ping -c1 -W 1 $bot_ip   >/dev/null
         if [ $? -eq 0 ]; then
-            sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butler_test_functions test_butler_loop_start "[$1, [{\""$2"\",$3},{\""$4"\",$5}]]."
+            sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butler_test_functions test_butler_loop_start "[$1, [{\""$2"\",$3},{\""$4"\",$5}]]."
             echo "<br>"
             echo "OK Done...."
         else

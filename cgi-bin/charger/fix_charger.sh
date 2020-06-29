@@ -21,7 +21,7 @@ charger_error (){
     sleep 1
     echo "Sending Init to Charger"
     echo "<br>"
-    sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript charger_functions remove_blacklist_chargers "[[$2]]."
+    sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript charger_functions remove_blacklist_chargers "[[$2]]."
 
 }
 echo "Content-type: text/html"

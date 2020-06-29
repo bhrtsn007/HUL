@@ -4,11 +4,11 @@ pick_task_pps () {
     echo "<br>"
     if [ "$2" -eq "1" ]; then
        echo '<pre>'
-       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript ppstaskrec search_by "[[{'pps_id', 'equal',$1},{'status', 'notequal', 'complete'}], 'key']."
+       sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript ppstaskrec search_by "[[{'pps_id', 'equal',$1},{'status', 'notequal', 'complete'}], 'key']."
        echo '</pre>'
     elif [ "$2" -eq "2" ]; then
        echo '<pre>'
-       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript ppstaskrec search_by "[[{'pps_id', 'equal',$1},{'status', 'notequal', 'complete'}], 'record']."
+       sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript ppstaskrec search_by "[[{'pps_id', 'equal',$1},{'status', 'notequal', 'complete'}], 'record']."
        echo '</pre>'
     else 
         echo "Wrong Key pressed"

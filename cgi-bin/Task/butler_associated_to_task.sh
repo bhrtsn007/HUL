@@ -4,11 +4,11 @@ butler_associated_to_task () {
     echo "<br>"
     if [ "$2" -eq "1" ]; then
       echo '<pre>'
-       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'key']."
+       sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'key']."
        echo '</pre>'
     elif [ "$2" -eq "2" ]; then
       echo '<pre>'
-       sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']."
+       sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']."
        echo '</pre>'
     else 
         echo "Wrong Key pressed"

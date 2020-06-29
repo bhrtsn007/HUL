@@ -10,7 +10,7 @@ clear_task_butler_ready () {
     else
         ping -c1 -W 1 $bot_ip  > /dev/null
         if [ $? -eq 0 ];then
-            sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo update_columns_by_id "[$1,[{'taskkey','null'},{'tasktype','null'},{'status','ready'}]]."
+            sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo update_columns_by_id "[$1,[{'taskkey','null'},{'tasktype','null'},{'status','ready'}]]."
         else
            echo "Butler is not ON.....turn on Butler FIRST"
         fi 

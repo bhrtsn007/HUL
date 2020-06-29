@@ -3,9 +3,9 @@ change_status_to_created () {
     echo "Change Taskkey : <<'$1'>> to created"
     echo "<br>"
     if [ "$2" -eq "1" ]; then
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'picktask',<<\"$1\">>},{'pending','created'},'undefined']."
+        sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'picktask',<<\"$1\">>},{'pending','created'},'undefined']."
     elif [ "$2" -eq "2" ]; then
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'audittask',<<\"$1\">>},{'pending','created'},'undefined']."
+        sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'audittask',<<\"$1\">>},{'pending','created'},'undefined']."
     else
         echo "Wrong key pressed"
     fi        
@@ -53,7 +53,7 @@ echo "<br>"
         exit 0
   else
    # No looping this time, just extract the data you are looking for with sed:
-     XX=`echo "$QUERY_STRING" | sed -n 's/^.*Task_key=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
+    XX=`echo "$QUERY_STRING" | sed -n 's/^.*Task_key=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
    YY=`echo "$QUERY_STRING" | sed -n 's/^.*audittask=\([^ ]*\).*$/\1/p'`
 	
      echo "Task_key: " $XX

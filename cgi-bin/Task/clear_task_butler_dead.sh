@@ -2,7 +2,7 @@
 clear_task_butler_dead () {
     echo "Clearing Task of dead Butler_ID : $1 "
     echo "<br>"
-    sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo update_columns_by_id "[$1,[{'taskkey','null'},{'tasktype','null'},{'status','dead'}]]."
+    sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo update_columns_by_id "[$1,[{'taskkey','null'},{'tasktype','null'},{'status','dead'}]]."
 }
 echo "Content-type: text/html"
 echo ""

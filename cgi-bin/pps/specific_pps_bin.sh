@@ -3,7 +3,7 @@ ppsbin_info () {
     echo "PPS_ID : $1 BIN_ID : $2 Info"
     echo "<br>"
     echo '<pre>'
-    sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript ppsbin search_by "[[{'pps_id', 'equal', $1},{'ppsbin_id', 'equal', \""$2"\"}], 'record']."
+    sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript ppsbin search_by "[[{'pps_id', 'equal', $1},{'ppsbin_id', 'equal', \""$2"\"}], 'record']."
     echo '</pre>'
 }
 echo "Content-type: text/html"

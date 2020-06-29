@@ -3,9 +3,9 @@ change_status_to_complete () {
     echo "Changing Taskkey : <<'$1'>> status to complete"
     echo "<br>"
     if [ "$2" -eq "1" ]; then
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'picktask',<<\"$1\">>},'complete','undefined']."
+        sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'picktask',<<\"$1\">>},'complete','undefined']."
     elif [ "$2" -eq "2" ]; then
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'audittask',<<\"$1\">>},'complete','undefined']."
+        sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butler_task_functions set_task_status "[{'audittask',<<\"$1\">>},'complete','undefined']."
     else
         echo "Wrong key pressed"
     fi 

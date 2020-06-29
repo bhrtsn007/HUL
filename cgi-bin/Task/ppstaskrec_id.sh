@@ -3,7 +3,7 @@ pps_task_status () {
     echo "PPS Task_key : <<'$1'>> INFO"
     echo "<br>"
     echo '<pre>'
-    sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript ppstaskrec get_by_id "[<<\"$1\">>]."
+    sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript ppstaskrec get_by_id "[<<\"$1\">>]."
     echo '</pre>'
 
 }

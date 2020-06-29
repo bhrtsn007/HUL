@@ -4,16 +4,16 @@ delete_chargetask () {
     echo "<br>"
     echo "<br>"
     echo '<pre>'
-    sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']."
+    sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']."
     echo '</pre>'
-    bot_ip=`sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']." | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'`
+    bot_ip=`sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript butlerinfo search_by "[[{'taskkey', 'equal', <<\"$1\">>}], 'record']." | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'`
     echo "<br>"
     echo "Butler Ip: $bot_ip"
     echo "<br>"
     if [ ! -n "$bot_ip" ]
     then
         echo "Butler is Not Present....Deleting a charge task"
-        sudo /opt/butler_server/erts-9.3/bin/escript /home/gor/rpc_call.escript chargetaskrec delete "[<<\"$1\">>]."
+        sudo /opt/butler_server/erts-9.3.3.6/bin/escript /home/gor/rpc_call.escript chargetaskrec delete "[<<\"$1\">>]."
         echo "<br>"
         echo "Ok....Done"
         
